@@ -20,7 +20,7 @@ if 'lista_instrumentos' not in st.session_state:
 with st.sidebar.form("input_form"):
     ticker = st.text_input("Ticker del Instrumento (Ej: AAPL, AL30.BA)", "").upper()
     vencimiento = st.text_input("Vencimiento (opcional)", "N/A")
-    tasa_mensual = st.number_input("Tasa Mensual Estimada (%)", min_value=0.0, float_value=1.0, step=0.1)
+    tasa_mensual = st.number_input("Tasa Mensual Estimada (%)", min_value=0.0, value=1.0, step=0.1)
     
     add_btn = st.form_submit_button("Añadir a la lista")
     if add_btn and ticker:
@@ -91,3 +91,4 @@ if st.session_state.lista_instrumentos:
 
 else:
     st.info("Agregá tickers en la barra lateral para comenzar.")
+
